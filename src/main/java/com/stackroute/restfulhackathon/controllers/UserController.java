@@ -8,7 +8,6 @@ import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,12 +31,6 @@ public class UserController {
 	}
 	
 	public boolean ValidateRequestParams(String emailid,String username) {
-		if (username==null) {
-			return false;
-		}
-		if (emailid==null) {
-			return false;
-		}
 		if(username!=null && emailid!=null) {
 			return true;
 		}
@@ -95,11 +88,5 @@ public class UserController {
 			e.printStackTrace();
 		}
 		return new ResponseEntity<String>(s, HttpStatus.CONFLICT);
-	}
-	
-	@RequestMapping(value="/{id}",method = RequestMethod.GET)
-	public ResponseEntity<Users> getUserById(@PathVariable(value="id") int id){
-		Users user=userservice.getUserById(id);
-		return new ResponseEntity<Users>(user, HttpStatus.OK) ;
 	}
 }
