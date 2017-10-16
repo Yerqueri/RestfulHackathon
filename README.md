@@ -6,3 +6,5 @@ Markup :http://<ip>:<port>/swagger-ui.html
 ## System.properties for Mongo database
 spring.data.mongodb.uri=mongodb://localhost/<yourdbname>
 spring.data.mongodb.repositories.enabled=true
+
+
