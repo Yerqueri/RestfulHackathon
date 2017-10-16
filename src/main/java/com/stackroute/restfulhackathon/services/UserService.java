@@ -30,9 +30,8 @@ public class UserService implements UserServiceDef{
 		return null;
 	}
 
-	public String getUserById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Users getUserById(int id) {
+		return userdao.findOne(id);
 	}
 
 
